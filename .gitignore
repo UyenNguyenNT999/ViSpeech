@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+checkpoints/
+inference_result/
+logs/
+dataset/trainset/
+dataset/clean_testset/
+dataset/noise_testset/
+dataset/noisy_testset/

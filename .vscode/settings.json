@@ -1,0 +1,14 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.terminal.activateEnvironment": false,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell ViSpeech": {
+      "path": "${env:windir}\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "args": ["-NoLogo", "-NoProfile"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell ViSpeech",
+  "terminal.integrated.env.windows": {
+    "PYTHONIOENCODING": "utf-8"
+  }
+}

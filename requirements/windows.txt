@@ -1,0 +1,9 @@
+# Direct dependencies for the local Windows / Python 3.9 environment.
+# Install cuda121.txt separately first.
+numpy<2
+librosa==0.10.2
+pandas==2.2.2
+tqdm>=4.66,<5
+PyYAML
+scikit-learn
+jupyter
