@@ -12,7 +12,7 @@ Checkpoints:
 https://drive.google.com/drive/folders/1kUAjdlG7t_Pyh4ab1L3M4kH9qD88pI9h?usp=sharing
 
 **Details:**            
-The drive contains 3 folder: `trainset`, `clean_testset` and `noise_testset`. There is also a `metadata` folder including information related to the three sets. The information includes following fields:
+The drive contains 3 folder: `trainset`, `clean_testset` and `noisy_testset`. There is also a `metadata` folder including information related to the three sets. The information includes following fields:
   - `audio`: Audio data with a sampling rate of 44,100 Hz.
   - `audio_name`: The name of the audio file.
   - `dialect`: The dialect of the speaker.
@@ -25,7 +25,7 @@ The drive contains 3 folder: `trainset`, `clean_testset` and `noise_testset`. Th
 Install the required packages:
    `requirements.txt`.
 #### Data preparation
-Download the datasets from the drive and place the folders `trainset`, `clean_testset`, and `noise_testset` inside the `dataset` directory. The text files in the `dataset` folder were used to generate the results reported in the paper. The `trainset` will be split into `train.txt` and `validation.txt`. Each text file contains two fields: audio path and numeric label. The gender and dialect information are encoded into numeric labels as follows, enabling training for both tasks without creating separate input files:
+Download the datasets from the drive and place the folders `trainset`, `clean_testset`, and `noisy_testset` inside the `dataset` directory. The text files in the `dataset` folder were used to generate the results reported in the paper. The `trainset` will be split into `train.txt` and `validation.txt`. Each text file contains two fields: audio path and numeric label. The gender and dialect information are encoded into numeric labels as follows, enabling training for both tasks without creating separate input files:
   - 0: female_north
   - 1: female_central
   - 2: female_south

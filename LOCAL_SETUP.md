@@ -68,12 +68,12 @@ To recreate the saved environment, install cuda121.txt first, then:
 ## Data and results
 
 Keep original downloaded data in the workspace's `Data/ViSpeech/` folder.
-The repository's dataset/*.txt files contain relative audio paths; make those
-paths resolve before training. Note that downloaded data currently has a
-`noisy_testset` folder, while the author documents `noise_testset`; check the
-paths in the text manifests before copying or linking data.
-
-Keep dataset/*.txt as the original experiment splits.
+Run `uv run python prepare_audio_paths.py` from `Code/ViSpeech/` before training
+or inference. This separate script checks every audio file and updates the four
+dataset/*.txt manifests from `dataset/...` to `../../Data/ViSpeech/...`.
+Labels and split membership stay unchanged.
+Re-running the script checks the updated paths again.
+dataset.py reads these paths directly; run models from `Code/ViSpeech/`.
 Training writes to checkpoints/; inference writes to inference_result/.
 Record experiment settings and metrics under logs/ when running experiments.
 The environment and generated artifacts are excluded from Git.

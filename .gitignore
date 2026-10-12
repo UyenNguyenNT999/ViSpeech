@@ -7,5 +7,4 @@ inference_result/
 logs/
 dataset/trainset/
 dataset/clean_testset/
-dataset/noise_testset/
 dataset/noisy_testset/

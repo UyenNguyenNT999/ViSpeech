@@ -104,4 +104,3 @@ class LoadData():
             audio = np.pad(audio, (0, shortage), 'wrap')
 
         return audio[:max_audio]
-    

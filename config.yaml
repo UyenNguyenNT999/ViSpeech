@@ -32,7 +32,7 @@ task:
 
 # Augmentation resources
 augmentation_resources:
-  rir_path: "augmentation/RIR"
+  rir_path: "augmentation/RIR_22050"
   noise_path: "augmentation/background_noise"
 
 # Dataset paths
