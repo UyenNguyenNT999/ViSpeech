@@ -116,9 +116,10 @@ val_dataset = LoadDataAndLabel(
     enable_augmentation=False
 )
 
-# Windows workers import this module again; use the main process by default.
-num_workers = training_config.get('num_workers', 0 if os.name == 'nt' else 2)
-loader_val = DataLoader(val_dataset, batch_size=training_config['batch_size'], num_workers=num_workers, shuffle=False)
+loader_val = DataLoader(val_dataset, 
+                        batch_size=training_config['batch_size'], 
+                        num_workers=0, 
+                        shuffle=False)
 
 
 def evaluate(model, dataloader):
@@ -179,7 +180,7 @@ def run_training():
         loader_train = DataLoader(
             train_dataset, 
             batch_sampler=RandomSampler(train_dataset, task, n_classes, batch_size=training_config['batch_size']), 
-            num_workers=num_workers,
+            num_workers=0, 
             pin_memory=True
         )
 

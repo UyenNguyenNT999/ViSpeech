@@ -1,0 +1,46 @@
+# Đường dẫn tương đối bên dưới tính từ thư mục chứa file cấu hình này.
+model:
+  checkpoint: checkpoints/dialect/resnet34_20261010_213509/best_1.pth
+  version: v0.9.0
+  dropout: 0.3
+
+audio:
+  sampling_rate: 22050
+  length_seconds: 5
+  n_mels: 64
+  n_fft: 1024
+  window_length: 552
+  hop_length: 220
+
+dataset:
+  speech_list_file: dataset/validation.txt
+  # Các đường dẫn TRONG validation.txt tính từ Code/ViSpeech.
+  speech_paths_directory: .
+
+noise:
+  # path trong CSV tính từ thư mục chứa CSV; chỉ cần noise_id,path.
+  noise_metadata_file: augmentation/evaluation_noise_segments/noise_metadata.csv
+  snr_db: [20, 10, 0]
+  repeats: 1
+
+evaluation:
+  seed: 42
+  device: auto  # auto, cpu hoặc cuda
+  batch_size: 4
+  # null: toàn bộ validation. Đổi thành 20 nếu muốn tự chạy thử trước.
+  max_samples: null
+
+output:
+  root: logs/noise_robustness
+  # Chỉ lưu mẫu nghe của repeat đầu; chọn đều Bắc/Trung/Nam nếu có.
+  save_audio_examples: true
+  audio_example_count: 3
+
+# Chỉ được dùng bởi inspect_training_augmentation.py, không ảnh hưởng đánh giá.
+training_augmentation_check:
+  speech_list_file: dataset/train.txt
+  noise_directory: augmentation/background_noise
+  sample_count: 60
+  repeats: 3
+  seed: 42
+  output_directory: logs/training_augmentation_check

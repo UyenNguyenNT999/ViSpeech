@@ -1,0 +1,9 @@
+﻿source_path,source_recording_id,duration_seconds,saved_segments,silent_segments_skipped,discarded_tail_seconds,status,error
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\alex_jauk-loud-burp-funny-noise.mp3,source_53bad473d706,3.030204081632653,0,0,3.030204081632653,too_short,
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\extrasounds-white-noise.mp3,source_a8358baacda8,10.728027210884354,1,0,0.7205895691609977,processed,
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\freesound_community-blue-noise.mp3,source_800411cdaf2b,5.1840362811791385,1,0,0.18031746031746032,processed,
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\freesound_community-underwater-white-noise.mp3,source_6dcf06bf3915,7.3920181405895695,1,0,2.3882993197278912,processed,
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\soundreality-crowd-noise.mp3,source_6c41f6dcba2b,30.216009070294785,1,0,0.19369614512471656,processed,
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\soundreality-space-noise.mp3,source_50346cfbc614,22.032018140589567,1,0,2.0171428571428573,processed,
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\spinopel-car-engine-noise.mp3,source_a2dd0b1adac5,21.31591836734694,1,0,1.3010430839002267,processed,
+C:\Users\Uyen\Documents\Master\LuanVan01\Code\ViSpeech\augmentation\evaluation_noise\audio\universfield-tv-static-noise.mp3,source_a239ce3b6b44,15.046530612244897,1,0,0.03537414965986395,processed,

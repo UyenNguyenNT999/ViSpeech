@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "input_directory": "C:\\Users\\Uyen\\Documents\\Master\\LuanVan01\\Code\\ViSpeech\\augmentation\\evaluation_noise\\audio",
+  "config_path": "C:\\Users\\Uyen\\Documents\\Master\\LuanVan01\\Code\\ViSpeech\\config_noise_eval.yaml",
+  "sampling_rate": 22050,
+  "segment_samples": 110332,
+  "segment_seconds": 5.003718820861678,
+  "segments_per_file": 1,
+  "seed": 42,
+  "rules": "mono; resample; randomly select full non-overlapping segments without replacement; discard short remainder; no volume normalization",
+  "note": "Các đoạn cùng source_recording_id không phải nguồn nhiễu độc lập.",
+  "saved_segments": 7
+}
