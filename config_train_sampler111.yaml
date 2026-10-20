@@ -1,0 +1,28 @@
+# Independent configuration; config.yaml is not changed.
+audio:
+  length: 5
+  sampling_rate: 22050
+  n_mels: 64
+  window_configs:
+    22050: [1024, 552, 220]
+    16000: [512, 400, 160]
+    8000: [512, 200, 80]
+model:
+  type: resnet34
+  dropout: 0.3
+  versions:
+    resnet34: v0.9.0
+training:
+  seed: 42
+  batch_size: 32
+  max_steps: 91800 # Old run: 300 epochs x 306 updates
+  validation_every_steps: 306
+  enable_augmentation: true
+task:
+  type: dialect
+augmentation_resources:
+  rir_path: augmentation/RIR_22050
+  noise_path: augmentation/background_noise
+datasets:
+  trainset: dataset/train.txt
+  valset: dataset/validation.txt

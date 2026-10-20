@@ -1,0 +1,29 @@
+# Sau khi train: thay duy nhất checkpoint bên dưới bằng đường dẫn model mới.
+# Điều kiện đánh giá giữ như lần 1:2:1 tại 20261018_221428_db87c290.
+model:
+  checkpoint: checkpoints/dialect/resnet34_sampler111_20261019_100521_712784/best_1.pth
+  version: v0.9.0
+  dropout: 0.3
+audio:
+  sampling_rate: 22050
+  length_seconds: 5
+  n_mels: 64
+  n_fft: 1024
+  window_length: 552
+  hop_length: 220
+dataset:
+  speech_list_file: dataset/validation.txt
+  speech_paths_directory: .
+noise:
+  noise_metadata_file: augmentation/evaluation_noise_segments/noise_metadata.csv
+  snr_db: [20, 10, 0]
+  repeats: 1
+evaluation:
+  seed: 42
+  device: auto
+  batch_size: 4
+  max_samples: null
+output:
+  root: logs/noise_robustness_sampler111
+  save_audio_examples: true
+  audio_example_count: 3
