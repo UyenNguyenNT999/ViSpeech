@@ -1,0 +1,3 @@
+# Reuse the exact historical validation mixture plan; no test data are used.
+reference_run: logs/noise_robustness_sampler111/20261021_064555_601bc517
+output_directory: dataset/fixed_noise_validation_dual

@@ -1,0 +1,31 @@
+# Pilot settings, not validated optimal hyperparameters. Paths relative to this project.
+name: paired_A
+initial_checkpoint: checkpoints/dialect/resnet34_sampler111_20261019_100521_712784/best_1.pth
+output_root: checkpoints/dialect
+audio:
+  length: 5
+  sampling_rate: 22050
+  n_mels: 64
+  window_configs:
+    22050: [1024, 552, 220]
+model:
+  type: resnet34
+  version: v0.9.0
+  dropout: 0.3
+training:
+  seed: 42
+  batch_size: 16 # 16 pairs = 32 waveforms in one forward pass
+  learning_rate: 0.00001
+  weight_decay: 0.0005
+  max_steps: 3060
+  validation_every_steps: 306
+  patience_checks: 5 # Five validation checks without higher original accuracy
+  min_delta: 0.0
+  consistency_weight: 0.0
+noise:
+  path: augmentation/background_noise
+  snr_db_min: 0.0 # Uniform continuous SNR, not just 0/10/20
+  snr_db_max: 20.0
+datasets:
+  trainset: dataset/train.txt
+  valset: dataset/validation.txt
