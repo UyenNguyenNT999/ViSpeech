@@ -1,0 +1,31 @@
+# A121: clean test plus identical artificial noise conditions used for A.
+model:
+  checkpoint: checkpoints/dialect/paired_dual_validation_A121_20261030_105417_153792/best_robust.pth
+  version: v0.9.0
+  dropout: 0.3
+audio:
+  sampling_rate: 22050
+  length_seconds: 5
+  n_mels: 64
+  n_fft: 1024
+  window_length: 552
+  hop_length: 220
+dataset:
+  speech_list_file: dataset/clean_testset.txt
+  speech_paths_directory: .
+noise:
+  noise_metadata_file: augmentation/evaluation_noise_segments/noise_metadata.csv
+  snr_db:
+  - 20
+  - 10
+  - 0
+  repeats: 1
+evaluation:
+  seed: 42
+  device: auto
+  batch_size: 4
+  max_samples: null
+output:
+  root: logs/noise_robustness_test_A121
+  save_audio_examples: true
+  audio_example_count: 3

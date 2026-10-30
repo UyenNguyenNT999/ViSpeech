@@ -1,0 +1,36 @@
+# A121: same paired training as A; start from the original sampler 1:2:1 model.
+# The paired-training sampler remains balanced 1:1:1.
+name: paired_dual_validation_A121
+initial_checkpoint: checkpoints/dialect/resnet34_20261010_213509/best_1.pth
+output_root: checkpoints/dialect
+audio:
+  length: 5
+  sampling_rate: 22050
+  n_mels: 64
+  window_configs:
+    22050: [1024, 552, 220]
+model:
+  type: resnet34
+  version: v0.9.0
+  dropout: 0.3
+training:
+  seed: 42
+  batch_size: 16 # 16 pairs / 32 waveforms, identical to A
+  learning_rate: 0.00001
+  weight_decay: 0.0005
+  max_steps: 3060 # Fixed budget; NO early stopping
+  validation_every_steps: 306
+  consistency_weight: 0.0
+noise:
+  path: augmentation/background_noise
+  snr_db_min: 0.0
+  snr_db_max: 20.0
+datasets:
+  trainset: dataset/train.txt
+  valset: dataset/validation.txt
+validation:
+  fixed_directory: dataset/fixed_noise_validation_dual
+  clean_batch_size: 16
+  noisy_batch_size: 4
+  # Relative to THIS run's initial checkpoint clean accuracy, in percentage points.
+  max_clean_accuracy_drop_pp: 0.5
